@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>講義資料 - 阿部翔弥のホームページ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: #60a5fa; /* Tailwind blue-400 */
+        }
+        .language-switcher a {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem; /* rounded-md */
+            transition: background-color 0.2s;
+        }
+        .language-switcher a:hover {
+            background-color: #4b5563; /* bg-gray-700 for hover on dark bg */
+        }
+        .language-switcher .current-lang {
+            background-color: #374151; /* bg-gray-800 */
+            color: white;
+            cursor: default;
+        }
+         .language-switcher .other-lang {
+            background-color: #6b7280; /* bg-gray-500 */
+            color: white;
+        }
+        .lecture-item {
+            border: 1px solid #e5e7eb; /* Tailwind gray-200 */
+            transition: box-shadow 0.3s;
+        }
+        .lecture-item:hover {
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); /* Tailwind shadow-md */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-white shadow-lg py-6 px-4 md:px-8 rounded-b-lg">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+                    <a href="index.html">
+                        <img src="https://placehold.co/120x120/e2e8f0/333333?text=写真" alt="プロフィール写真" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow-md border-4 border-white md:mr-6">
+                    </a>
+                    <div class="text-center md:text-left mt-4 md:mt-0">
+                        <h1 class="text-3xl md:text-4xl font-bold text-slate-700"><a href="index.html">阿部 翔弥</a></h1>
+                        <p class="text-slate-600 mt-2 text-lg">所属：大阪大学大学院 国際公共政策研究科 博士前期課程2年</p>
+                    </div>
+                </div>
+                <div class="language-switcher flex items-center space-x-2 mt-4 md:mt-0">
+                    <span class="current-lang">日本語</span>
+                    <a href="../en/lecture.html" class="other-lang">English</a> </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-slate-800 text-white sticky top-0 z-50 shadow-md rounded-b-md">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center md:justify-start space-x-4 md:space-x-6 py-3">
+                <li><a href="index.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Top</a></li>
+                <li><a href="research.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">研究</a></li>
+                <li><a href="lecture.html" class="nav-link active hover:text-blue-300 transition duration-150 p-2 rounded-md">講義資料</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-6 md:mt-10 p-4 md:p-6">
+        <section id="lecture-details" class="p-6 bg-white rounded-lg shadow-lg">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-700 border-b-2 border-slate-300 pb-3 mb-8">講義資料 詳細</h2>
+            
+            <article class="lecture-item mb-8 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold text-slate-600 mb-2">講義名：公共政策のためのデータ分析入門 (2024年度前期)</h3>
+                <p class="text-sm text-gray-500 mb-3">対象：学部2・3年生</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    この講義では、公共政策の立案・評価に必要な基本的なデータ分析手法を学びます。統計ソフトウェアRを用いた実習を通じて、データの収集、可視化、基礎的な統計モデリングのスキルを習得することを目標とします。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <h4 class="text-xl font-medium text-slate-500 mt-2 mb-2">シラバス・資料</h4>
+                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li><a href="#" class="text-blue-500 hover:underline">シラバス (PDF)</a></li>
+                            <li><a href="#" class="text-blue-500 hover:underline">第1回：イントロダクション (スライド PDF)</a></li>
+                            <li><a href="#" class="text-blue-500 hover:underline">第2回：記述統計とデータの可視化 (スライド PDF)</a></li>
+                            </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-medium text-slate-500 mt-2 mb-2">関連情報</h4>
+                         <ul class="list-disc list-inside text-gray-600 space-y-1">
+                            <li>使用テキスト：『〇〇〇〇』(著者名, 出版社, 年)</li>
+                            <li>参考ウェブサイト：<a href="#" class="text-blue-500 hover:underline">R Project 公式サイト</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+
+            <hr class="my-8 border-gray-300">
+
+            <article class="lecture-item mb-8 p-6 rounded-lg">
+                <h3 class="text-2xl font-semibold text-slate-600 mb-2">ワークショップ：研究倫理とデータ管理 (2023年後期)</h3>
+                 <p class="text-sm text-gray-500 mb-3">対象：大学院生</p>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    研究活動を行う上で不可欠な研究倫理の基礎知識と、研究データの適切な管理方法について解説するワークショップの資料です。個人情報保護や再現可能性の確保についても触れています。
+                </p>
+                <ul class="list-disc list-inside text-gray-600 space-y-1">
+                    <li><a href="#" class="text-blue-500 hover:underline">ワークショップスライド (PDF)</a></li>
+                    <li><a href="#" class="text-blue-500 hover:underline">関連資料・チェックリスト (PDF)</a></li>
+                </ul>
+            </article>
+            
+        </section>
+    </main>
+
+    <footer class="text-center p-6 bg-slate-800 text-gray-300 mt-12 rounded-t-lg">
+        <div class="language-switcher flex justify-center items-center space-x-2 mb-4">
+            <span class="current-lang">日本語</span>
+            <a href="../en/lecture.html" class="other-lang">English</a> </div>
+        <p>&copy; <span id="currentYear"></span> 阿部 翔弥. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

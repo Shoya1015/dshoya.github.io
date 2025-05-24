@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoya ABE - Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .nav-link.active {
+            font-weight: bold;
+            color: #60a5fa; /* Tailwind blue-400 */
+        }
+        .language-switcher a {
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s;
+        }
+        .language-switcher a:hover {
+            background-color: #4b5563;
+        }
+        .language-switcher .current-lang {
+            background-color: #374151;
+            color: white;
+            cursor: default;
+        }
+         .language-switcher .other-lang {
+            background-color: #6b7280;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header id="pageTop" class="bg-white shadow-lg py-6 px-4 md:px-8 rounded-b-lg">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex flex-col md:flex-row items-center mb-4 md:mb-0">
+                    <img src="https://placehold.co/120x120/e2e8f0/333333?text=Photo" alt="Profile Photo" class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover shadow-md border-4 border-white md:mr-6">
+                    <div class="text-center md:text-left mt-4 md:mt-0">
+                        <h1 class="text-3xl md:text-4xl font-bold text-slate-700">Shoya ABE</h1>
+                        <p class="text-slate-600 mt-2 text-lg">Affiliation: 2nd Year Master's Student, Osaka School of International Public Policy (OSIPP), Osaka University</p>
+                        <div class="mt-3 text-slate-500">
+                            <h3 class="font-semibold text-slate-600">Contact & Links:</h3>
+                            <ul class="list-inside list-disc mt-1 space-y-1 text-sm md:text-base">
+                                <li>Email: <a href="mailto:shoya.abe.1015@gmail.com" class="text-blue-500 hover:underline">shoya.abe.1015@gmail.com</a></li>
+                                <li>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">yourusername</a></li>
+                                <li>X (Twitter): <a href="https://x.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">@yourusername</a></li>
+                                <li>Qiita: <a href="https://qiita.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">yourusername</a></li>
+                                <li>Kaggle: <a href="https://www.kaggle.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">yourusername</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="language-switcher flex items-center space-x-2 mt-4 md:mt-0">
+                    <a href="../index.html" class="other-lang">日本語</a>
+                    <span class="current-lang">English</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="bg-slate-800 text-white sticky top-0 z-50 shadow-md rounded-b-md">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center md:justify-start space-x-4 md:space-x-6 py-3">
+                <li><a href="#pageTop" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Top</a></li>
+                <li><a href="#research" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Research</a></li>
+                <li><a href="#lecture" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Lectures</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-6 md:mt-10 p-4 md:p-6">
+
+        <section id="research" class="mb-12 p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex justify-between items-center border-b-2 border-slate-300 pb-2 mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-700">Research</h2>
+                <a href="research.html" class="text-blue-500 hover:text-blue-700 hover:underline transition duration-150">Read More &rarr;</a>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+                Overview of my main research themes and interests.
+            </p>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+                <li>Research Theme 1: Public Economics</li>
+                <li>Research Theme 2: Political Economy</li>
+            </ul>
+        </section>
+
+        <section id="lecture" class="mb-12 p-6 bg-white rounded-lg shadow-lg">
+            <div class="flex justify-between items-center border-b-2 border-slate-300 pb-2 mb-6">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-700">Lecture Materials</h2>
+                <a href="lecture.html" class="text-blue-500 hover:text-blue-700 hover:underline transition duration-150">View Details &rarr;</a>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+                Summary of lectures I have given and materials I have created.
+            </p>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-700">
+                <li>Lecture Material 1: Introduction to XXX Slides (Summary)</li>
+                <li>Lecture Material 2: YYY Workshop Materials (Summary)</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer class="text-center p-6 bg-slate-800 text-gray-300 mt-12 rounded-t-lg">
+        <div class="language-switcher flex justify-center items-center space-x-2 mb-4">
+            <a href="../index.html" class="other-lang">日本語</a>
+            <span class="current-lang">English</span>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Shoya ABE. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - (document.querySelector('nav').offsetHeight + 20)) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHref = link.getAttribute('href');
+                if (linkHref.substring(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
