@@ -3,103 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - 私のホームページ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>研究 - 阿部翔弥のホームページ</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        html {
-            scroll-behavior: smooth; /* 同ページ内リンクのため残しても良い */
-        }
-        /* アクティブなナビゲーションリンクのスタイル */
-        .nav-link.active { /* このページでは "Research" をアクティブにする処理が必要 */
-            font-weight: bold;
-            color: #60a5fa; /* Tailwind blue-400 */
-        }
-    </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
+    <link rel="stylesheet" href="css/style.css"> </head>
+<body>
 
-    <header class="bg-white shadow-lg py-8 px-4 md:px-8 rounded-b-lg">
-        <div class="container mx-auto flex flex-col md:flex-row items-center">
-            <div class="md:mr-8 mb-4 md:mb-0">
-                <a href="index.html">
-                    <img src="https://placehold.co/150x150/e2e8f0/333333?text=写真" alt="プロフィール写真" class="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover shadow-md border-4 border-white">
-                </a>
-            </div>
-            <div class="text-center md:text-left">
-                <h1 class="text-3xl md:text-4xl font-bold text-slate-700"><a href="index.html">氏名を入力</a></h1>
-                <p class="text-slate-600 mt-2 text-lg">所属：〇〇大学 〇〇学部 / 〇〇株式会社 〇〇部</p>
-                <p class="text-slate-500 mt-1">学歴：〇〇大学大学院 〇〇研究科 修了</p>
-                <div class="mt-3 text-slate-500">
-                    <h3 class="font-semibold text-slate-600">連絡先:</h3>
-                    <ul class="list-inside list-disc mt-1">
-                        <li>Email: <a href="mailto:your.email@example.com" class="text-blue-500 hover:underline">your.email@example.com</a></li>
-                        <li>GitHub: <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">yourusername</a></li>
-                    </ul>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="profile-info">
+                    <a href="index.html">
+                        <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/e2e8f0/333333?text=写真';" alt="プロフィール写真" class="profile-image">
+                    </a>
+                    <div class="profile-details">
+                        <h1><a href="index.html">阿部 翔弥</a></h1>
+                        <p class="profile-affiliation">所属：大阪大学大学院 国際公共政策研究科 博士前期課程2年</p>
+                        <div class="contact-links-header">
+                            <h3>連絡先・リンク (詳細はTopページへ)</h3>
+                            <ul>
+                                <li>Email: <a href="mailto:shoya.abe.1015@gmail.com">shoya.abe.1015@gmail.com</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
+                <div class="language-switcher">
+                    <span class="current-lang">日本語</span>
+                    <a href="en/research.html" class="other-lang">English</a> </div>
             </div>
         </div>
     </header>
 
-    <nav class="bg-slate-800 text-white sticky top-0 z-50 shadow-md rounded-b-md">
-        <div class="container mx-auto px-4">
-            <ul class="flex justify-center md:justify-start space-x-4 md:space-x-6 py-3">
-                <li><a href="index.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Top</a></li>
-                <li><a href="research.html" class="nav-link active hover:text-blue-300 transition duration-150 p-2 rounded-md">Research</a></li> <li><a href="tips.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Tips</a></li>
-                <li><a href="blog.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Blog</a></li>
-                <li><a href="others.html" class="nav-link hover:text-blue-300 transition duration-150 p-2 rounded-md">Others</a></li>
+    <nav class="site-nav">
+        <div class="container">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Top</a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link active">研究</a></li>
+                <li class="nav-item"><a href="lecture.html" class="nav-link">講義資料</a></li>
             </ul>
         </div>
     </nav>
 
-    <main class="container mx-auto mt-6 md:mt-10 p-4 md:p-6">
-
-        <section id="research-details" class="p-6 bg-white rounded-lg shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-bold text-slate-700 border-b-2 border-slate-300 pb-3 mb-8">Research 詳細</h2>
-            
-            <article class="mb-8">
-                <h3 class="text-2xl font-semibold text-slate-600 mb-3">研究テーマ1：詳細なタイトル</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    ここに研究テーマ1に関する詳細な説明、背景、目的、手法、現在の進捗、図表などを記述します。
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
-                <img src="https://placehold.co/600x400/e2e8f0/333333?text=研究テーマ1の図" alt="研究テーマ1の図" class="rounded-md shadow-sm my-4 w-full max-w-lg mx-auto">
-                <h4 class="text-xl font-medium text-slate-500 mt-4 mb-2">関連論文・発表</h4>
-                <ul class="list-disc list-inside text-gray-600 space-y-1">
-                    <li>論文タイトルA (Journal Name, Year) - <a href="#" class="text-blue-500 hover:underline">DOI/Link</a></li>
-                    <li>学会発表B (Conference Name, Year) - <a href="#" class="text-blue-500 hover:underline">資料Link</a></li>
+    <main class="main-content container">
+        <section id="research-details" class="content-section">
+            <h2 class="section-title">研究 詳細</h2>
+            <article class="research-item-article">
+                <h3>研究テーマ1：公共経済学</h3>
+                <p>ここに公共経済学に関する詳細な説明、背景、目的、手法、現在の進捗、図表などを記述します。Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <img src="images/research_fig1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333333?text=公共経済学の図';" alt="公共経済学の図" style="margin: 1rem auto; border-radius: 0.5rem;">
+                <h4>関連論文・発表</h4>
+                <ul>
+                    <li>論文タイトルA (Journal Name, Year) - <a href="#">DOI/Link</a></li>
+                    <li>学会発表B (Conference Name, Year) - <a href="#">資料Link</a></li>
                 </ul>
             </article>
-
-            <hr class="my-8 border-gray-300">
-
-            <article class="mb-8">
-                <h3 class="text-2xl font-semibold text-slate-600 mb-3">研究テーマ2：詳細なタイトル</h3>
-                <p class="text-gray-700 leading-relaxed mb-4">
-                    研究テーマ2に関する詳細な情報を記述します。
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                </article>
-            
-            </section>
-
+            <hr>
+            <article class="research-item-article">
+                <h3>研究テーマ2：政治経済学</h3>
+                <p>ここに政治経済学に関する詳細な情報を記述します。Duis aute irure dolor in reprehenderit...</p>
+                <img src="https://placehold.co/600x400/e2e8f0/333333?text=政治経済学の図" alt="政治経済学の図" style="margin: 1rem auto; border-radius: 0.5rem;">
+                <h4>関連論文・発表</h4>
+                <ul>
+                    <li>論文タイトルC (Journal Name, Year) - <a href="#">DOI/Link</a></li>
+                    <li>学会発表D (Conference Name, Year) - <a href="#">資料Link</a></li>
+                </ul>
+            </article>
+        </section>
     </main>
 
-    <footer class="text-center p-6 bg-slate-800 text-gray-300 mt-12 rounded-t-lg">
-        <p>&copy; <span id="currentYear"></span> あなたの名前. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="language-switcher">
+                <span class="current-lang">日本語</span>
+                <a href="en/research.html" class="other-lang">English</a> </div>
+            <p>&copy; <span id="currentYear"></span> 阿部 翔弥. All Rights Reserved.</p>
+        </div>
     </footer>
 
-    <script>
-        // 現在の年をフッターに表示
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // このページでは "Research" リンクを常にアクティブにするか、
-        // もしページ内にさらにサブセクションがあってスクロールスパイが必要なら別途調整します。
-        // 簡単のため、ここでは research.html では "Research" ナビリンクに active クラスを直接付与しています。
-    </script>
-
+    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
 </body>
 </html>
