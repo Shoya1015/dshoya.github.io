@@ -9,8 +9,7 @@
 </head>
 <body>
 
-    <header id="pageTop" class="site-header">
-        <div class="container">
+    <header id="pageTop" class="site-header"> <div class="container">
             <div class="header-content">
                 <div class="profile-info">
                     <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/140x140/EAECEE/2C3E50?text=写真';" alt="プロフィール写真" class="profile-image">
@@ -41,15 +40,14 @@
         <div class="container">
             <ul class="nav-menu">
                 <li class="nav-item"><a href="#pageTop" class="nav-link">Top</a></li>
-                <li class="nav-item"><a href="#research" class="nav-link">研究</a></li>
-                <li class="nav-item"><a href="#lecture" class="nav-link">講義資料</a></li>
+                <li class="nav-item"><a href="research.html" class="nav-link">研究</a></li>
+                <li class="nav-item"><a href="lecture.html" class="nav-link">講義資料</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="main-content container">
-        <section id="research" class="content-section">
-            <div class="section-header">
+        <section id="research-overview" class="content-section"> <div class="section-header">
                 <h2 class="section-title">研究</h2>
                 <a href="research.html" class="details-link">詳細を見る &rarr;</a>
             </div>
@@ -62,8 +60,7 @@
             </div>
         </section>
 
-        <section id="lecture" class="content-section">
-            <div class="section-header">
+        <section id="lecture-overview" class="content-section"> <div class="section-header">
                 <h2 class="section-title">講義資料</h2>
                 <a href="lecture.html" class="details-link">詳細を見る &rarr;</a>
             </div>
@@ -90,46 +87,6 @@
     <script>
         // フッターの年を更新
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // ナビゲーションリンクのアクティブ化 (スクロールスパイ)
-        const sectionsForScrollSpy = document.querySelectorAll('.content-section'); // idを持つセクションを監視対象に
-        const navLinksForScrollSpy = document.querySelectorAll('.nav-menu .nav-link'); // ナビリンク
-        const siteNav = document.querySelector('.site-nav');
-        const navHeightOffset = siteNav ? siteNav.offsetHeight + 20 : 70; // ナビゲーションバーの高さ + オフセット
-
-        window.addEventListener('scroll', () => {
-            let currentSectionId = '';
-            const scrollPosition = window.pageYOffset;
-
-            sectionsForScrollSpy.forEach(section => {
-                // セクションの上端が画面の上端からナビゲーションバーの高さ分下に入ったらアクティブとみなす
-                // かつ、セクションの下端がまだ画面の上端からナビゲーションバーの高さ分下にある場合
-                if (section.offsetTop - navHeightOffset <= scrollPosition && 
-                    section.offsetTop + section.offsetHeight - navHeightOffset > scrollPosition) {
-                    currentSectionId = section.getAttribute('id');
-                }
-            });
-
-            navLinksForScrollSpy.forEach(link => {
-                link.classList.remove('active');
-                const href = link.getAttribute('href');
-                // hrefが '#' で始まるページ内リンクのみを対象
-                if (href && href.startsWith('#') && href.substring(1) === currentSectionId) {
-                    link.classList.add('active');
-                }
-            });
-
-            // トップリンク(#pageTop)のアクティブ化ロジック (オプション)
-            const topLink = document.querySelector('.nav-link[href="#pageTop"]');
-            if (topLink) {
-                // 最初のセクションの上端よりも上にスクロールしている場合、またはどのセクションもアクティブでない場合
-                if (sectionsForScrollSpy.length > 0 && scrollPosition < sectionsForScrollSpy[0].offsetTop - navHeightOffset && currentSectionId === '') {
-                    // topLink.classList.add('active'); // 必要に応じてTopをアクティブにする
-                } else if (currentSectionId !== '') {
-                    topLink.classList.remove('active');
-                }
-            }
-        });
     </script>
 </body>
 </html>
