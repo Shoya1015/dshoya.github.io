@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>阿部翔弥のホームページ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="site-header">
+    <header id="pageTop" class="site-header">
         <div class="container">
             <div class="header-content">
                 <div class="profile-info">
-                    <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/e2e8f0/333333?text=写真';" alt="プロフィール写真" class="profile-image">
+                    <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/140x140/EAECEE/2C3E50?text=写真';" alt="プロフィール写真" class="profile-image">
                     <div class="profile-details">
                         <h1>阿部 翔弥</h1>
                         <p class="profile-affiliation">所属：大阪大学大学院 国際公共政策研究科 博士前期課程2年</p>
@@ -88,34 +88,47 @@
     </footer>
 
     <script>
+        // フッターの年を更新
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // Scrollspy for navigation (simplified)
-        const sections = document.querySelectorAll('.content-section'); // Target sections by a common class
-        const navLinks = document.querySelectorAll('.nav-menu .nav-link'); // Target nav links
+        // ナビゲーションリンクのアクティブ化 (スクロールスパイ)
+        const sectionsForScrollSpy = document.querySelectorAll('.content-section'); // idを持つセクションを監視対象に
+        const navLinksForScrollSpy = document.querySelectorAll('.nav-menu .nav-link'); // ナビリンク
+        const siteNav = document.querySelector('.site-nav');
+        const navHeightOffset = siteNav ? siteNav.offsetHeight + 20 : 70; // ナビゲーションバーの高さ + オフセット
 
         window.addEventListener('scroll', () => {
             let currentSectionId = '';
-            const navHeight = document.querySelector('.site-nav') ? document.querySelector('.site-nav').offsetHeight : 0;
-            const scrollPosition = pageYOffset + navHeight + 50; // Add offset for better activation
+            const scrollPosition = window.pageYOffset;
 
-            sections.forEach(section => {
-                if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+            sectionsForScrollSpy.forEach(section => {
+                // セクションの上端が画面の上端からナビゲーションバーの高さ分下に入ったらアクティブとみなす
+                // かつ、セクションの下端がまだ画面の上端からナビゲーションバーの高さ分下にある場合
+                if (section.offsetTop - navHeightOffset <= scrollPosition && 
+                    section.offsetTop + section.offsetHeight - navHeightOffset > scrollPosition) {
                     currentSectionId = section.getAttribute('id');
                 }
             });
 
-            navLinks.forEach(link => {
+            navLinksForScrollSpy.forEach(link => {
                 link.classList.remove('active');
-                // For top link, check if no other section is active and at top of page
-                if (link.getAttribute('href') === '#pageTop') {
-                    if (currentSectionId === '' && pageYOffset < sections[0].offsetTop - navHeight - 50) {
-                        // link.classList.add('active'); // Optionally activate "Top" link
-                    }
-                } else if (link.getAttribute('href').substring(1) === currentSectionId) {
+                const href = link.getAttribute('href');
+                // hrefが '#' で始まるページ内リンクのみを対象
+                if (href && href.startsWith('#') && href.substring(1) === currentSectionId) {
                     link.classList.add('active');
                 }
             });
+
+            // トップリンク(#pageTop)のアクティブ化ロジック (オプション)
+            const topLink = document.querySelector('.nav-link[href="#pageTop"]');
+            if (topLink) {
+                // 最初のセクションの上端よりも上にスクロールしている場合、またはどのセクションもアクティブでない場合
+                if (sectionsForScrollSpy.length > 0 && scrollPosition < sectionsForScrollSpy[0].offsetTop - navHeightOffset && currentSectionId === '') {
+                    // topLink.classList.add('active'); // 必要に応じてTopをアクティブにする
+                } else if (currentSectionId !== '') {
+                    topLink.classList.remove('active');
+                }
+            }
         });
     </script>
 </body>

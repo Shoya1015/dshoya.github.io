@@ -1,4 +1,7 @@
-/* css/style.css */
+/* css/style.css - Revamped Version */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap');
 
 /* --- Global Resets & Base Styles --- */
 *,
@@ -11,53 +14,56 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Base font size */
+    font-size: 16px;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-    line-height: 1.6;
-    color: #374151; /* text-gray-700 */
-    background-color: #f3f4f6; /* bg-gray-100 */
+    font-family: 'Noto Sans JP', sans-serif; /* Default body font */
+    line-height: 1.7;
+    color: #34495E; /* Base text color */
+    background-color: #F4F7F9; /* Base background color */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 /* --- Typography --- */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 600; /* semibold */
-    color: #1f2937; /* text-gray-800 */
-    margin-bottom: 0.75em;
+    font-family: 'Noto Serif JP', serif; /* Heading font */
+    font-weight: 700; /* Bold for headings */
+    color: #2C3E50; /* Heading text color */
+    margin-bottom: 0.8em;
+    line-height: 1.3;
 }
 
-h1 { font-size: 2.25rem; line-height: 2.5rem; /* text-4xl */ }
-h2 { font-size: 1.875rem; line-height: 2.25rem; /* text-3xl */ }
-h3 { font-size: 1.5rem; line-height: 2rem; /* text-2xl */ }
-h4 { font-size: 1.25rem; line-height: 1.75rem; /* text-xl */ }
+h1 { font-size: 2.5rem; } /* Approx text-4xl */
+h2 { font-size: 2rem; }   /* Approx text-3xl */
+h3 { font-size: 1.65rem; } /* Approx text-2xl */
+h4 { font-size: 1.25rem; } /* Approx text-xl */
 
 p {
-    margin-bottom: 1rem;
-    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 1.25rem;
 }
 
 a {
-    color: #3b82f6; /* text-blue-500 */
+    color: #5DADE2; /* Sky blue for links */
     text-decoration: none;
-    transition: color 0.2s ease-in-out;
+    font-weight: 500; /* Medium weight for links */
+    transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
 }
 
-a:hover {
-    color: #1d4ed8; /* text-blue-700 */
+a:hover, a:focus {
+    color: #3498DB; /* Slightly darker sky blue on hover */
     text-decoration: underline;
 }
 
 ul, ol {
-    list-style-position: inside;
+    list-style-position: outside; /* Standard list appearance */
+    padding-left: 1.5em; /* Indent lists */
     margin-bottom: 1rem;
 }
 
 ul li, ol li {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
 }
 
 img {
@@ -69,14 +75,14 @@ img {
 
 hr {
     border: none;
-    border-top: 1px solid #e5e7eb; /* border-gray-200 */
-    margin: 2rem 0;
+    border-top: 1px solid #D5D8DC; /* Lighter border */
+    margin: 2.5rem 0;
 }
 
 /* --- Layout & Container --- */
 .container {
     width: 90%;
-    max-width: 1100px; /* Max width for content */
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 1rem;
@@ -85,18 +91,17 @@ hr {
 
 /* --- Header --- */
 .site-header {
-    background-color: #ffffff; /* bg-white */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04); /* shadow-lg like */
-    padding: 1.5rem 0; /* Adjusted padding */
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    background-color: #192A51; /* Navy blue background */
+    color: #FFFFFF; /* White text on navy */
+    padding: 2rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .header-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .profile-info {
@@ -104,92 +109,106 @@ hr {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .profile-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* rounded-full */
+    width: 130px; /* Slightly larger */
+    height: 130px;
+    border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 4px solid #5DADE2; /* Sky blue border */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
 
-.profile-details h1 a {
-    color: #1f2937; /* text-slate-700 */
+.profile-details h1 {
+    color: #FFFFFF; /* White for name */
+    font-size: 2.2rem; /* Adjust size */
+    margin-bottom: 0.25rem;
+}
+.profile-details h1 a { /* Ensure name link is white if it's a link */
+    color: #FFFFFF;
     text-decoration: none;
 }
 .profile-details h1 a:hover {
-    color: #111827; /* text-slate-800 */
+    text-decoration: underline;
 }
 
 .profile-affiliation {
-    color: #4b5563; /* text-slate-600 */
-    font-size: 1.125rem; /* text-lg */
-    margin-top: 0.25rem;
+    color: #EAECEE; /* Light gray for affiliation */
+    font-size: 1.1rem;
+    font-weight: 400; /* Regular weight */
 }
 
+.contact-links-header {
+    margin-top: 0.75rem;
+}
 .contact-links-header h3 {
-    font-size: 0.875rem; /* text-sm */
-    color: #374151; /* text-slate-600 */
-    margin-bottom: 0.25rem;
+    font-family: 'Noto Sans JP', sans-serif; /* Use body font for this small heading */
+    font-size: 0.9rem;
+    color: #BDC3C7; /* Lighter gray for sub-heading */
+    margin-bottom: 0.35rem;
+    font-weight: 500;
 }
 .contact-links-header ul {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding-left: 0;
-    font-size: 0.875rem; /* text-sm */
+    font-size: 0.9rem;
 }
-.contact-links-header li {
-    margin-bottom: 0.125rem;
+.contact-links-header li a {
+    color: #A9CCE3; /* Lighter sky blue for links on navy */
+}
+.contact-links-header li a:hover {
+    color: #FFFFFF;
 }
 
-/* Language Switcher in Header & Footer */
+/* Language Switcher */
 .language-switcher {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    margin-top: 1rem; /* Space from profile info on mobile */
 }
 
 .language-switcher a,
 .language-switcher span {
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem; /* rounded-md */
-    font-size: 0.875rem; /* text-sm */
-    font-weight: 500; /* medium */
-    transition: background-color 0.2s, color 0.2s;
+    padding: 0.6rem 1rem;
+    border-radius: 0.3rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
     border: 1px solid transparent;
 }
 
 .language-switcher .current-lang {
-    background-color: #374151; /* bg-slate-800 */
-    color: #ffffff;
+    background-color: #5DADE2; /* Sky blue for current language */
+    color: #FFFFFF;
+    border-color: #5DADE2;
     cursor: default;
 }
 
 .language-switcher .other-lang {
-    background-color: #e5e7eb; /* bg-gray-200 */
-    color: #374151; /* text-gray-700 */
-    border-color: #d1d5db; /* border-gray-300 */
+    background-color: transparent;
+    color: #EAECEE; /* Light gray for other language link */
+    border-color: #5DADE2; /* Sky blue border */
 }
 
 .language-switcher .other-lang:hover {
-    background-color: #d1d5db; /* bg-gray-300 */
-    color: #1f2937; /* text-gray-800 */
+    background-color: #5DADE2; /* Sky blue background on hover */
+    color: #FFFFFF;
     text-decoration: none;
+    border-color: #5DADE2;
 }
 
 /* --- Navigation --- */
 .site-nav {
-    background-color: #1f2937; /* bg-slate-800 */
-    color: #ffffff;
+    background-color: #2C3E50; /* Darker shade of navy/blue-gray */
+    color: #FFFFFF;
     padding: 0.75rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    border-bottom-left-radius: 0.375rem;
-    border-bottom-right-radius: 0.375rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }
 
 .nav-menu {
@@ -197,91 +216,112 @@ hr {
     justify-content: center;
     list-style: none;
     padding-left: 0;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .nav-item .nav-link {
-    color: #e5e7eb; /* text-gray-200 */
-    padding: 0.75rem 1rem;
-    border-radius: 0.375rem;
+    font-family: 'Noto Sans JP', sans-serif; /* Use body font for nav items */
+    color: #ECF0F1; /* Light gray for nav links */
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.3rem;
     font-weight: 500;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
+    text-transform: uppercase; /* Optional: makes nav items more distinct */
+    font-size: 0.9rem;
+    letter-spacing: 0.05em; /* Optional: adds a bit of spacing */
 }
 
 .nav-item .nav-link:hover {
-    background-color: #374151; /* bg-slate-700 */
-    color: #ffffff;
+    background-color: #5DADE2; /* Sky blue background on hover */
+    color: #FFFFFF;
 }
 
 .nav-item .nav-link.active {
-    background-color: #3b82f6; /* Tailwind blue-500 as an example for active */
-    color: #ffffff;
-    font-weight: 600;
+    background-color: #5DADE2; /* Sky blue for active link */
+    color: #FFFFFF;
+    font-weight: 700; /* Bold for active */
 }
 
 /* --- Main Content --- */
 .main-content {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 3rem;
 }
 
 .content-section {
-    background-color: #ffffff;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+    background-color: #FFFFFF; /* White background for content sections */
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.07); /* Softer, more modern shadow */
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #e5e7eb; /* border-slate-300 */
-    padding-bottom: 0.5rem;
-    margin-bottom: 1.5rem;
+    align-items: baseline; /* Align baseline of title and link */
+    border-bottom: 1px solid #AED6F1; /* Light sky blue border */
+    padding-bottom: 0.75rem;
+    margin-bottom: 1.75rem;
 }
 
-.section-title {
-    margin-bottom: 0; /* Reset margin from h2 base */
+.section-title { /* This class is on h2 inside section-header */
+    margin-bottom: 0;
+    color: #192A51; /* Navy for section titles */
 }
 
 .section-header .details-link {
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #5DADE2;
+    white-space: nowrap; /* Prevent wrapping */
 }
+.section-header .details-link:hover {
+    color: #3498DB;
+}
+
 
 .section-content p {
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.8; /* Increased line height for readability */
+    color: #34495E;
 }
 .section-content ul {
-    padding-left: 1.25rem; /* Indent list items */
+    padding-left: 1.25rem;
 }
 
-
-/* Specific styling for lecture items / research items if needed */
+/* Specific styling for cards (lecture items, research articles) */
 .lecture-item, .research-item-article {
-    padding: 1.5rem;
-    border: 1px solid #e5e7eb; /* border-gray-200 */
-    border-radius: 0.5rem; /* rounded-lg */
+    background-color: #F8F9FA; /* Light gray background for items */
+    padding: 1.75rem;
+    border: 1px solid #E5E7E9; /* Softer border */
+    border-radius: 0.4rem;
     margin-bottom: 2rem;
-    transition: box-shadow 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
 .lecture-item:hover, .research-item-article:hover {
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #5DADE2; /* Sky blue border on hover */
 }
 
-.lecture-item h3, .research-item-article h3 {
-    margin-top: 0; /* Ensure title is at the top */
+.lecture-item h3, .research-item-article h3 { /* Title inside card */
+    color: #192A51; /* Navy for card titles */
+    margin-top: 0;
+    font-size: 1.4rem;
+}
+.lecture-item h4, .research-item-article h4 { /* Sub-title inside card */
+    color: #2C3E50;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .lecture-item .meta-info, .research-item-article .meta-info {
-    font-size: 0.875rem;
-    color: #6b7280; /* text-gray-500 */
-    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: #7F8C8D; /* Muted gray for meta info */
+    margin-bottom: 1rem;
 }
 
 .lecture-item-grid {
@@ -293,59 +333,78 @@ hr {
 
 /* --- Footer --- */
 .site-footer {
-    background-color: #1f2937; /* bg-slate-800 */
-    color: #d1d5db; /* text-gray-300 */
+    background-color: #192A51; /* Navy blue background */
+    color: #BDC3C7; /* Lighter gray for footer text */
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1rem;
     margin-top: 3rem;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
 }
 
 .site-footer .language-switcher {
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
+.site-footer .language-switcher .other-lang {
+    color: #EAECEE;
+    border-color: #7F8C8D;
+}
+.site-footer .language-switcher .other-lang:hover {
+    background-color: #5DADE2;
+    color: #FFFFFF;
+    border-color: #5DADE2;
+}
+
 
 .site-footer p {
     margin-bottom: 0;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
 }
 
 /* --- Responsive Adjustments --- */
-@media (min-width: 768px) { /* md breakpoint */
-    h1 { font-size: 2.5rem; line-height: 2.75rem; }
-    h2 { font-size: 2rem; line-height: 2.5rem; }
-    h3 { font-size: 1.75rem; line-height: 2.25rem; }
+@media (min-width: 768px) { /* md breakpoint equivalent */
+    h1 { font-size: 2.75rem; }
+    h2 { font-size: 2.2rem; }
+    h3 { font-size: 1.75rem; }
 
     .header-content {
         flex-direction: row;
         justify-content: space-between;
+        align-items: flex-start; /* Align items to the start of the flex container */
     }
     .profile-info {
         flex-direction: row;
         text-align: left;
-        gap: 1.5rem;
+        align-items: flex-start; /* Align items to the start for better vertical alignment */
+        gap: 1.75rem;
     }
     .profile-image {
-        width: 120px; /* md:w-32 */
-        height: 120px; /* md:h-32 */
+        width: 140px;
+        height: 140px;
+    }
+    .profile-details {
+        margin-top: 0; /* Reset margin for desktop */
     }
     .contact-links-header {
         text-align: left;
+        margin-top: 0.5rem;
     }
     .language-switcher {
-         margin-top: 0;
+         margin-top: 0; /* Reset margin for desktop */
     }
     .nav-menu {
         justify-content: flex-start;
         gap: 1rem;
     }
     .content-section {
-        padding: 2rem;
+        padding: 2.5rem;
     }
     .lecture-item-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
+@media (min-width: 1024px) { /* lg breakpoint equivalent */
+    .nav-menu {
+        gap: 1.5rem; /* More space for nav items on larger screens */
+    }
+}

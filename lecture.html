@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>講義資料 - 阿部翔弥のホームページ</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"> </head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
     <header class="site-header">
@@ -13,7 +14,7 @@
             <div class="header-content">
                 <div class="profile-info">
                     <a href="index.html">
-                        <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/e2e8f0/333333?text=写真';" alt="プロフィール写真" class="profile-image">
+                        <img src="images/profile.jpg" onerror="this.onerror=null;this.src='https://placehold.co/140x140/EAECEE/2C3E50?text=写真';" alt="プロフィール写真" class="profile-image">
                     </a>
                     <div class="profile-details">
                         <h1><a href="index.html">阿部 翔弥</a></h1>
@@ -47,11 +48,12 @@
     <main class="main-content container">
         <section id="lecture-details" class="content-section">
             <h2 class="section-title">講義資料 詳細</h2>
+            
             <article class="lecture-item">
                 <h3>講義名：公共政策のためのデータ分析入門 (2024年度前期)</h3>
                 <p class="meta-info">対象：学部2・3年生</p>
                 <p>この講義では、公共政策の立案・評価に必要な基本的なデータ分析手法を学びます。統計ソフトウェアRを用いた実習を通じて、データの収集、可視化、基礎的な統計モデリングのスキルを習得することを目標とします。</p>
-                <img src="images/lecture_slide1.png" onerror="this.onerror=null;this.src='https://placehold.co/600x300/e2e8f0/333333?text=講義資料の例';" alt="講義資料の例" style="margin: 1rem auto; border-radius: 0.5rem; max-width: 500px;">
+                <img src="images/lecture_slide1.png" onerror="this.onerror=null;this.src='https://placehold.co/600x300/EAECEE/2C3E50?text=講義資料の例';" alt="講義資料の例" style="margin: 1rem auto; border-radius: 0.5rem; max-width: 500px;">
                 <div class="lecture-item-grid">
                     <div>
                         <h4>シラバス・資料</h4>
@@ -59,20 +61,20 @@
                             <li><a href="#">シラバス (PDF)</a></li>
                             <li><a href="#">第1回：イントロダクション (スライド PDF)</a></li>
                             <li><a href="#">第2回：記述統計とデータの可視化 (スライド PDF)</a></li>
-                        </ul>
+                            </ul>
                     </div>
                     <div>
                         <h4>関連情報</h4>
-                        <ul>
+                         <ul>
                             <li>使用テキスト：『〇〇〇〇』(著者名, 出版社, 年)</li>
                             <li>参考ウェブサイト：<a href="#">R Project 公式サイト</a></li>
                         </ul>
                     </div>
                 </div>
             </article>
-            <hr>
-            <article class="lecture-item">
-                <h3>ワークショップ：研究倫理とデータ管理 (2023年後期)</h3>
+
+            <hr> <article class="lecture-item">
+                 <h3>ワークショップ：研究倫理とデータ管理 (2023年後期)</h3>
                 <p class="meta-info">対象：大学院生</p>
                 <p>研究活動を行う上で不可欠な研究倫理の基礎知識と、研究データの適切な管理方法について解説するワークショップの資料です。個人情報保護や再現可能性の確保についても触れています。</p>
                 <ul>
@@ -80,19 +82,22 @@
                     <li><a href="#">関連資料・チェックリスト (PDF)</a></li>
                 </ul>
             </article>
-        </section>
+            
+            </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
             <div class="language-switcher">
                 <span class="current-lang">日本語</span>
-                 <a href="en/lecture.html" class="other-lang">English</a>
+                <a href="en/lecture.html" class="other-lang">English</a>
             </div>
             <p>&copy; <span id="currentYear"></span> 阿部 翔弥. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <script>document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
